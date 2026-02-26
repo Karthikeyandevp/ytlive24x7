@@ -1,0 +1,14 @@
+name: 24x7 Live
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stream:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install ffmpeg
+      run: sudo apt update && sudo apt install ffmpeg -y
+    - name: Start Stream
+      run: bash stream.sh
